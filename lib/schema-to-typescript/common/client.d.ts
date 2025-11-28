@@ -1,0 +1,32 @@
+import { GetModelData, ModelImportInfo } from './models';
+import { GeneratedServicesImportInfo } from './services';
+import { OpenApiInfo, OpenApiServer } from '../../schemas/common';
+import { OpenApiPaths } from '../../schemas/openapi';
+import { JsDocRenderConfig } from '../../utils/jsdoc';
+import { CommentsRenderConfig } from '../common';
+import { ClientGenerationResultFile } from '../config';
+import { OpenApiClientBuiltinBinaryType, OpenApiClientCustomizableBinaryType, OpenApiClientGeneratorConfig, OpenApiClientValidationContext } from '../openapi-to-typescript-client';
+export declare function generateClient({ commonHttpClientClassName, commonHttpClientClassOptionsName, commonHttpClientErrorClassName, commonHttpClientImportPath, commonHttpServiceClassName, commonHttpServiceImportPath, clientConfig: { includeServices, name, exportModels, exportServices, exportErrorClass, exportOptionsType, errorClassName, generateJsDoc, generateErrorJsDoc, baseUrl, ...filenameConfig }, generatedServiceImports, servers, info, paths, operationsConfig, getModelData, modelImportInfos, validationContext, responseBinaryType, binaryTypes, jsDocRenderConfig, commentsConfig, deprecatedOperations }: {
+    commonHttpClientClassName: string;
+    commonHttpClientClassOptionsName: string;
+    commonHttpClientErrorClassName: string;
+    commonHttpClientImportPath: string;
+    commonHttpServiceClassName: string;
+    commonHttpServiceImportPath: string;
+    clientConfig: Exclude<OpenApiClientGeneratorConfig['client'], false>;
+    generatedServiceImports: GeneratedServicesImportInfo[];
+    servers: OpenApiServer[];
+    info: OpenApiInfo;
+    paths: OpenApiPaths;
+    operationsConfig: OpenApiClientGeneratorConfig['operations'];
+    getModelData: GetModelData;
+    modelImportInfos: ModelImportInfo[];
+    validationContext?: OpenApiClientValidationContext;
+    responseBinaryType: OpenApiClientBuiltinBinaryType;
+    binaryTypes: OpenApiClientCustomizableBinaryType[];
+    jsDocRenderConfig: JsDocRenderConfig;
+    commentsConfig: CommentsRenderConfig;
+    deprecatedOperations: {
+        [methodAndPath: string]: string;
+    };
+}): ClientGenerationResultFile;
