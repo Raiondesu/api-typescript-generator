@@ -19,23 +19,24 @@
   ],
   "exports": {
     ".": {
-      "import": "./lib/index.js",
+      "import": "./src/index.ts",
       "types": "./lib/index.d.ts",
       "require": "./lib/index.js"
     },
     "./openapi": {
-      "import": "./lib/openapi.js",
+      "import": "./src/openapi.ts",
       "types": "./lib/openapi.d.ts",
       "require": "./lib/openapi.js"
     },
     "./openapi-client": {
-      "import": "./lib/openapi-client.js",
+      "import": "./src/openapi-client.ts",
       "types": "./lib/openapi-client.d.ts",
       "require": "./lib/openapi-client.js"
     }
   },
   "main": "lib/index.js",
-  "bin": "lib/cli/index.js",
+  "bin": "lib/cli/index.ts",
+  "module": "src/index.ts",
   "type": "module",
   "scripts": {
     "precheck": "tsc --noEmit && jest && ",
